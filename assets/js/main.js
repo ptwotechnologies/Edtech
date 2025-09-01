@@ -240,9 +240,10 @@ CSS TABLE OF CONTENTS
 			},
 		});
 
-		
+
 
 		//>> Search Popup Start <<//
+		/*
 		const $searchWrap = $(".search-wrap");
 		const $navSearch = $(".nav-search");
 		const $searchClose = $("#search-close");
@@ -271,6 +272,7 @@ CSS TABLE OF CONTENTS
 		$(".search-trigger, .main-search-input").on("click", function (e) {
 			e.stopPropagation();
 		});
+		*/
 	}); // End Document Ready Function
 
 	// Custom Tabs

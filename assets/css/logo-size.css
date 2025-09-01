@@ -1,0 +1,25 @@
+/* Logo size adjustments */
+.logo img,
+.header-logo img,
+.offcanvas__logo img {
+    max-width: 100px !important;
+    height: auto !important;
+}
+
+@media (max-width: 1199px) {
+
+    .logo img,
+    .header-logo img,
+    .offcanvas__logo img {
+        max-width: 80px !important;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .logo img,
+    .header-logo img,
+    .offcanvas__logo img {
+        max-width: 60px !important;
+    }
+}
