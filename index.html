@@ -68,6 +68,97 @@
             margin-top: 10px;
         }
 
+        /* Improve tile spacing */
+        .program-sectionv1 .row {
+            margin-bottom: 30px;
+        }
+
+        .program-sectionv1 .col-lg-6 {
+            margin-bottom: 20px;
+        }
+
+        /* Improve spacing for service section tiles */
+        .service-wrapslide .swiper-slide {
+            margin-right: 20px;
+        }
+
+        .service-wrapslide .program-item {
+            margin-bottom: 0;
+        }
+
+        /* Add spacing between tile sections */
+        .program-sectionv1 {
+            margin-bottom: 60px;
+        }
+
+        /* Improve service section spacing */
+        .service-sectionv1 {
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Ensure consistent spacing between all tile sections */
+        .program-sectionv1+.service-sectionv1 {
+            margin-top: 80px;
+        }
+
+        /* Responsive spacing improvements */
+        @media (max-width: 991px) {
+            .program-sectionv1 {
+                margin-bottom: 40px;
+            }
+
+            .service-sectionv1 {
+                margin-top: 30px;
+                margin-bottom: 40px;
+            }
+
+            .program-sectionv1+.service-sectionv1 {
+                margin-top: 50px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .program-sectionv1 {
+                margin-bottom: 30px;
+            }
+
+            .service-sectionv1 {
+                margin-top: 20px;
+                margin-bottom: 30px;
+            }
+
+            .program-sectionv1+.service-sectionv1 {
+                margin-top: 40px;
+            }
+        }
+
+        /* Improve grid spacing */
+        .row.g-4>[class*="col-"] {
+            margin-bottom: 20px;
+        }
+
+        .row.g-3>[class*="col-"] {
+            margin-bottom: 15px;
+        }
+
+        /* Ensure tiles don't overlap */
+        .program-item {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Add gap between dark blue section and tile section */
+        .testimonial-sectionv1 {
+            margin-top: 60px;
+        }
+
+        /* Add gap between middle two tiles in counter section */
+        .talk-counter .col-lg-3:nth-child(3) {
+            margin-top: 30px;
+        }
+
         /* Change just the background of statistics counter cards to light greyish-blue */
         .counter-talk-items {
             background-color: #E8F0F8 !important;
@@ -92,6 +183,56 @@
             /* Make text italic */
             font-weight: bold !important;
             /* Make text bold */
+        }
+
+        /* Make social media icons blue */
+        .social-wrapper a i,
+        .footer-social a i {
+            color: #1E3A8A !important;
+        }
+
+        /* Make Twitter/X logo specifically blue */
+        .social-wrapper a svg,
+        .footer-social a svg {
+            fill: #1E3A8A !important;
+        }
+
+        /* Override hardcoded fill="white" in SVG paths */
+        .social-wrapper a svg path,
+        .footer-social a svg path {
+            fill: #1E3A8A !important;
+        }
+
+        /* Add gap between blue and pink sections */
+        .testimonial-sectionv1 {
+            margin-bottom: 60px;
+        }
+
+        /* Make "Student knowledge" text white */
+        .knowledge-section .sub-title.p5-clr {
+            color: white !important;
+        }
+
+        /* Hide any remaining homemenu elements */
+        .has-homemenu,
+        .homemenu-items,
+        .homemenu,
+        .homemenu-thumb {
+            display: none !important;
+        }
+
+        /* Make Contact Us button font weight bolder to match navigation items */
+        .header-button .theme-btn {
+            font-weight: bold !important;
+        }
+
+        /* Hide preloader and offcanvas elements to prevent popup on refresh */
+        #preloader,
+        .preloader,
+        .fix-area,
+        .offcanvas__info,
+        .offcanvas__overlay {
+            display: none !important;
         }
     </style>
 </head>
@@ -243,7 +384,6 @@
                                         <li class="has-dropdown active menu-thumb">
                                             <a href="index.html">
                                                 Home
-                                                <i class="fas fa-angle-down"></i>
                                             </a>
                                             <ul class="submenu has-homemenu">
                                                 <li>
@@ -288,37 +428,10 @@
                                         <li>
                                             <a href="service.html">
                                                 Services
-                                                <i class="fas fa-angle-down"></i>
                                             </a>
-                                            <ul class="submenu">
-                                                <li><a href="service.html">Services</a></li>
-                                                <li><a href="service-details.html">Services Details</a></li>
-                                            </ul>
                                         </li>
-
                                         <li>
-                                            <a href="blog.html">
-                                                Blog
-                                                <i class="fas fa-angle-down"></i>
-                                            </a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-dropdown">
-                                            <a href="#">
-                                                Pages
-                                                <i class="fas fa-angle-down"></i>
-                                            </a>
-                                            <ul class="submenu">
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="service.html">Services</a></li>
-                                                <li><a href="service-details.html">Services Details</a></li>
-                                                <li><a href="portfolio.html">Portfolio</a></li>
-                                                <li><a href="faq.html">Faq's</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
+                                            <a href="pricing.html">Pricing</a>
                                         </li>
 
                                     </ul>
@@ -1746,8 +1859,45 @@
         </div>
     </section>
 
+    <!-- Stay Success Section Start -->
+    <section class="stay-section pt-50 pb-50 cmn-bg overflow-hidden position-relative">
+        <div class="container">
+            <div class="row justify-content-between align-items-center g-4">
+                <div class="col-lg-5 col-md-6 col-sm-7">
+                    <div class="stay-content">
+                        <div class="section-title">
+                            <span class="sub-title wow fadeInUp white">
+                                Stay With Us
+                            </span>
+                            <h3 class="m-title wow fadeInUp white mb-sm-3 mb-2" data-wow-delay=".3s">
+                                The path to success starts with education
+                            </h3>
+                            <p class="mb-24 pra wow fadeInUp" data-wow-delay=".4s">
+                                Lorem ipsum dolor sit amet consectetur. Amet lectus mi ultricies dictum facilisis sem.
+                                Imperdiet massa turpis sit proin
+                                metus volutpat.
+                            </p>
+                            <a href="contact.html" class="theme-btn round100 p2-bg py-3">
+                                <span class="white fw-medium">
+                                    Read More
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 me-xl-5 col-sm-5">
+                    <div class="stay-thumb w-100">
+                        <img src="assets/img/aservices/stay-thumb.png" alt="img" class="w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Element-->
+        <img src="assets/img/aservices/stay-shape.png" alt="img" class="stay-element">
+    </section>
+
     <!--<< Footer Section Start >>-->
-    <footer class="footer-section overflow-hidden position-relative footer-style1 white-bg">
+    <footer class="footer-section overflow-hidden position-relative footer-style2 p1-bg">
         <div class="footer-widgets-wrapper">
             <div class="container">
                 <div class="row g-md-4 g-4 justify-content-between">
@@ -1881,24 +2031,43 @@
     <!--<< Bootstrap Js >>-->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!--<< Nice Select Js >>-->
-    <script src="assets/js/jquery.nice-select.min.js"></script>uery.meanmenu.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
     <!--<< Waypoints Js >>-->
-    <script src="assets/js/jquery.waypoints.js"></script>uery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.waypoints.js"></script>
     <!--<< Counterup Js >>-->
-    <script src="assets/js/jquery.counterup.min.js"></script>n.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
     <!--<< Swiper Slider Js >>-->
-    <script src="assets/js/swiper-bundle.min.js"></script>ain.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
     <!--<< MeanMenu Js >>-->
-    <!--<< Waypoints Js >>-->
-    <script src="assets/js/jquery.waypoints.js"></script> <!--<< Counterup Js >>-->
-    <script src="assets/js/jquery.counterup.min.js"></script> <!--<< Swiper Slider Js >>-->
-    <script src="assets/js/swiper-bundle.min.js"></script> <!--<< MeanMenu Js >>-->
-    <script src="assets/js/jquery.meanmenu.min.js"></script> <!--<< Magnific Popup Js >>-->
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <!--<< Magnific Popup Js >>-->
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <!--<< Wow Animation Js >>-->
     <script src="assets/js/wow.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
+
+    <!-- Configure meanmenu to not show homemenu -->
+    <script>
+        $(document).ready(function () {
+            // Configure meanmenu to not show homemenu
+            if (typeof $.fn.meanmenu !== 'undefined') {
+                $('#mobile-menu').meanmenu({
+                    meanMenuContainer: '.mean__menu-wrapper',
+                    meanRevealColour: '',
+                    meanShowChildren: true,
+                    meanExpandableChildren: true,
+                    meanRemoveAttrs: true,
+                    onePage: false,
+                    removeElements: '.homemenu-items, .homemenu, .homemenu-thumb'
+                });
+            }
+
+            // Remove any remaining homemenu elements
+            $('.has-homemenu, .homemenu-items, .homemenu, .homemenu-thumb').remove();
+            $('li:has(a[href="index.html"])').removeClass('has-dropdown menu-thumb');
+        });
+    </script>
 </body>
 
 </html>

@@ -920,6 +920,7 @@ span {
   margin-left: 40px;
   gap: 30px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .program-item .icons {
@@ -983,6 +984,7 @@ span {
   .program-item {
     padding: 20px 20px 20px 0;
     gap: 14px;
+    margin-bottom: 15px;
   }
 
   .program-item .content h4 {
@@ -4549,10 +4551,18 @@ iframe {
 .cmn-bg p,
 .cmn-bg span,
 .cmn-bg li,
+.cmn-bg li a,
 .cmn-bg a,
 .cmn-bg .sub-title,
 .cmn-bg .m-title,
 .cmn-bg .pre-pragraph {
+  color: var(--white) !important;
+}
+
+/* Make banner text white */
+.banner-section h1,
+.banner-section .title-explore,
+.banner-section .text-sount {
   color: var(--white) !important;
 }
 

@@ -10,7 +10,7 @@
     <meta name="author" content="mugli">
     <meta name="description" content="Ascent - Kids Kindergarden School HTML Template">
     <!-- ======== Page title ============ -->
-    <title>Ascent - Chindcare & Kids School HTML Template</title>
+    <title>Ascent - Pricing & Plans HTML Template</title>
     <!--<< Favcion >>-->
     <link rel="shortcut icon" href="assets/img/faveicon.png">
     <!--<< Bootstrap min.css >>-->
@@ -56,6 +56,134 @@
         .homemenu,
         .homemenu-thumb {
             display: none !important;
+        }
+
+        /* Ensure pricing tiles are properly separated */
+        .pricing-items {
+            margin: 0 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background: white;
+            border: 2px solid transparent;
+            overflow: hidden;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-items:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-items.cart-active {
+            border: 3px solid #1E3A8A;
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(30, 58, 138, 0.3);
+        }
+
+        .pricing-items.cart-active::before {
+            content: "Most Popular";
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: #1E3A8A;
+            color: white;
+            padding: 5px 40px;
+            font-size: 12px;
+            font-weight: bold;
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+
+        .pricing-head {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .pricing-body {
+            padding: 30px 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1E3A8A;
+        }
+
+        .pricing-listing {
+            flex: 1;
+            margin-bottom: 30px;
+        }
+
+        .pricing-listing li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f3f4;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .pricing-listing li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-listing li i {
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        .pricing-listing li .fa-angles-right {
+            color: #28a745;
+        }
+
+        .pricing-listing li .fa-circle-xmark {
+            color: #dc3545;
+        }
+
+        .theme-btn {
+            width: 100%;
+            padding: 18px 30px;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            margin-top: auto;
+        }
+
+        .theme-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.4);
+            background: linear-gradient(135deg, #1E40AF 0%, #2563EB 100%);
+            color: white;
+            text-decoration: none;
+        }
+
+        .theme-btn span {
+            color: white;
+        }
+
+        /* Make "Our Pricing" text bold and bigger */
+        .sub-title {
+            font-weight: bold !important;
+            font-size: 1.2em !important;
         }
     </style>
 </head>
@@ -150,9 +278,6 @@
     </div>
     <div class="offcanvas__overlay"></div>
 
-    <!-- Header Top Section Start -->
-    <!-- Top info section removed -->
-
     <!-- Header Section Start -->
     <header id="header-sticky" class="header-1 white-bg">
         <div class="container">
@@ -227,7 +352,6 @@
                                         <li>
                                             <a href="pricing.html">Pricing</a>
                                         </li>
-
                                     </ul>
                                 </nav>
                             </div>
@@ -252,12 +376,12 @@
     </header>
 
     <!-- Breadcrumnd Banner Start -->
-    <section class="breadcrumnd-banner cmn-bg overflow-hidden" style="margin-bottom: 40px;">
+    <section class="breadcrumnd-banner cmn-bg overflow-hidden">
         <div class="container">
             <div class="breadcrumnd-wrapper">
                 <div class="breadcrumnd-content">
                     <h1 class="white mb-lg-4 mb-md-3 mb-2">
-                        Service
+                        Pricing Plans
                     </h1>
                     <ul class="bread-list d-flex align-items-center gap-lg-4 gap-md-3 gap-2">
                         <li>
@@ -269,7 +393,7 @@
                             <i class="fa-solid fa-chevron-right white" style="color: white !important;"></i>
                         </li>
                         <li class="white" style="color: white !important;">
-                            Service
+                            Pricing Plans
                         </li>
                     </ul>
                 </div>
@@ -283,155 +407,157 @@
     </section>
     <!-- Breadcrumnd Banner Start -->
 
-    <!-- Service Program Section Start -->
-    <section class="program-sectionv1 overflow-hidden section-padding position-relative" style="margin-bottom: 60px;">
+    <!-- Pricing Section Start -->
+    <section class="pricing-sectionv position-relative fix space-bottom" style="margin-bottom: 80px;">
         <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                    <div class="program-item gra-border">
-                        <div class="icons gra-border round10 d-center">
-                            <img src="assets/img/aicon/car-icons1.png" alt="img">
-                        </div>
-                        <div class="content">
-                            <h4>
-                                <a href="service-details.html">Online Class</a>
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipiscing elit platea the ,osr of a proin mollis
-                                pretium facilisi in, ligula
-                                volutpat
-                            </p>
-                            <a href="service-details.html" class="readmore d-flex align-items-center gap-2">
-                                Read More
-                                <span class="arrows mt-1">
-                                    <i class="fa-solid fa-arrow-right"></i>
+            <div class="row justify-content-center mb-60">
+                <div class="col-lg-6">
+                    <div class="section-title text-center">
+                        <span class="sub-title wow fadeInUp p5-clr">
+                            Our Pricing
+                        </span>
+                        <h3 class="m-title wow fadeInUp black" data-wow-delay=".3s">
+                            Transforming lives through <br> knowledge by education
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-lg-0 g-4">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="pricing-items">
+                        <h4 class="pricing-head">
+                            Stater Plan
+                        </h4>
+                        <div class="pricing-body">
+                            <h1 class="price-title p4-clr mb-30">
+                                $19
+                                <span class="mos black">
+                                    /mo
                                 </span>
-                            </a>
+                            </h1>
+                            <ul class="pricing-listing d-grid gap-2 mb-40">
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-angles-right p5-clr"></i>
+                                    Mistakes To Avoid
+                                </li>
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-angles-right p5-clr"></i>
+                                    Your Startup
+                                </li>
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-circle-xmark cros"></i>
+                                    Knew About Fonts
+                                </li>
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-circle-xmark cros"></i>
+                                    Winning Metric for Your Startup
+                                </li>
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-circle-xmark cros"></i>
+                                    Your Startup
+                                </li>
+                            </ul>
+                            <div class="text-center">
+                                <a href="#" class="theme-btn">
+                                    <span>
+                                        Buy Now
+                                    </span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
-                    <div class="program-item gra-border">
-                        <div class="icons gra-border round10 d-center">
-                            <img src="assets/img/aicon/car-icons2.png" alt="img">
-                        </div>
-                        <div class="content">
-                            <h4>
-                                <a href="service-details.html">Formal Tuition</a>
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipiscing elit platea the ,osr of a proin mollis
-                                pretium
-                                facilisi in, ligula
-                                volutpat
-                            </p>
-                            <a href="service-details.html" class="readmore d-flex align-items-center gap-2">
-                                Read More
-                                <span class="arrows mt-1">
-                                    <i class="fa-solid fa-arrow-right"></i>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
+                    <div class="pricing-items">
+                        <h4 class="pricing-head">
+                            Premium Plan
+                        </h4>
+                        <div class="pricing-body">
+                            <h1 class="price-title p4-clr mb-30">
+                                $49
+                                <span class="mos black">
+                                    /mo
                                 </span>
-                            </a>
+                            </h1>
+                            <ul class="pricing-listing d-grid gap-2 mb-40">
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-angles-right p5-clr"></i>
+                                    All Basic Features
+                                </li>
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-angles-right p5-clr"></i>
+                                    Advanced Mathematics
+                                </li>
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-angles-right p5-clr"></i>
+                                    Creative Writing
+                                </li>
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-angles-right p5-clr"></i>
+                                    Science Experiments
+                                </li>
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-angles-right p5-clr"></i>
+                                    Art & Music Classes
+                                </li>
+                            </ul>
+                            <div class="text-center">
+                                <a href="#" class="theme-btn">
+                                    <span>
+                                        Choose Premium
+                                    </span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
-                    <div class="program-item gra-border">
-                        <div class="icons gra-border round10 d-center">
-                            <img src="assets/img/aicon/car-icons3.png" alt="img">
-                        </div>
-                        <div class="content">
-                            <h4>
-                                <a href="service-details.html">Preschool</a>
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipiscing elit platea the ,osr of a proin mollis
-                                pretium
-                                facilisi in, ligula
-                                volutpat
-                            </p>
-                            <a href="service-details.html" class="readmore d-flex align-items-center gap-2">
-                                Read More
-                                <span class="arrows mt-1">
-                                    <i class="fa-solid fa-arrow-right"></i>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".7s">
+                    <div class="pricing-items">
+                        <h4 class="pricing-head">
+                            Stater Plan
+                        </h4>
+                        <div class="pricing-body">
+                            <h1 class="price-title p4-clr mb-30">
+                                $19
+                                <span class="mos black">
+                                    /mo
                                 </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
-                    <div class="program-item gra-border">
-                        <div class="icons gra-border round10 d-center">
-                            <img src="assets/img/aicon/car-icons4.png" alt="img">
-                        </div>
-                        <div class="content">
-                            <h4>
-                                <a href="service-details.html">Special Tuition</a>
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipiscing elit platea the ,osr of a proin mollis
-                                pretium
-                                facilisi in, ligula
-                                volutpat
-                            </p>
-                            <a href="service-details.html" class="readmore d-flex align-items-center gap-2">
-                                Read More
-                                <span class="arrows mt-1">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
-                    <div class="program-item gra-border">
-                        <div class="icons gra-border round10 d-center">
-                            <img src="assets/img/aicon/car-icons5.png" alt="img">
-                        </div>
-                        <div class="content">
-                            <h4>
-                                <a href="service-details.html">Edu Connect</a>
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipiscing elit platea the ,osr of a proin mollis
-                                pretium
-                                facilisi in, ligula
-                                volutpat
-                            </p>
-                            <a href="service-details.html" class="readmore d-flex align-items-center gap-2">
-                                Read More
-                                <span class="arrows mt-1">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
-                    <div class="program-item gra-border">
-                        <div class="icons gra-border round10 d-center">
-                            <img src="assets/img/aicon/car-icons6.png" alt="img">
-                        </div>
-                        <div class="content">
-                            <h4>
-                                <a href="service-details.html">Knowledge Hub</a>
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipiscing elit platea the ,osr of a proin mollis
-                                pretium
-                                facilisi in, ligula
-                                volutpat
-                            </p>
-                            <a href="service-details.html" class="readmore d-flex align-items-center gap-2">
-                                Read More
-                                <span class="arrows mt-1">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </span>
-                            </a>
+                            </h1>
+                            <ul class="pricing-listing d-grid gap-2 mb-40">
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-angles-right p5-clr"></i>
+                                    Mistakes To Avoid
+                                </li>
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-angles-right p5-clr"></i>
+                                    Your Startup
+                                </li>
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-circle-xmark cros"></i>
+                                    Knew About Fonts
+                                </li>
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-circle-xmark cros"></i>
+                                    Winning Metric for Your Startup
+                                </li>
+                                <li class="d-flex align-items-center gap-xxl-4 gap-2 pra">
+                                    <i class="fa-solid fa-circle-xmark cros"></i>
+                                    Your Startup
+                                </li>
+                            </ul>
+                            <div class="text-center">
+                                <a href="#" class="theme-btn">
+                                    <span>
+                                        Buy Now
+                                    </span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Element -->
     </section>
 
     <!-- Stay Success Section Start -->
@@ -447,7 +573,7 @@
                             <h3 class="m-title wow fadeInUp white mb-sm-3 mb-2" data-wow-delay=".3s">
                                 The path to success starts with education
                             </h3>
-                            <p class="mb-24 pra wow fadeInUp white" data-wow-delay=".4s">
+                            <p class="mb-24 pra wow fadeInUp" data-wow-delay=".4s">
                                 Lorem ipsum dolor sit amet consectetur. Amet lectus mi ultricies dictum facilisis sem.
                                 Imperdiet massa turpis sit proin
                                 metus volutpat.

@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <!--<< Logo Size CSS >>-->
     <link rel="stylesheet" href="assets/css/logo-size.css">
+
     <style>
         .header-logo img,
         .offcanvas__logo img,
@@ -92,6 +93,20 @@
             /* Make text italic */
             font-weight: bold !important;
             /* Make text bold */
+        }
+
+        /* Make Contact Us button font weight bolder to match navigation items */
+        .header-button .theme-btn {
+            font-weight: bold !important;
+        }
+        
+        /* Hide preloader and offcanvas elements to prevent popup on refresh */
+        #preloader,
+        .preloader,
+        .fix-area,
+        .offcanvas__info,
+        .offcanvas__overlay {
+            display: none !important;
         }
     </style>
 </head>
@@ -210,7 +225,6 @@
                                         <li class="has-dropdown active menu-thumb">
                                             <a href="index.html">
                                                 Home
-                                                <i class="fas fa-angle-down"></i>
                                             </a>
                                             <ul class="submenu has-homemenu">
                                                 <li>
@@ -255,38 +269,16 @@
                                         <li>
                                             <a href="service.html">
                                                 Services
-                                                <i class="fas fa-angle-down"></i>
                                             </a>
                                             <ul class="submenu">
                                                 <li><a href="service.html">Services</a></li>
                                                 <li><a href="service-details.html">Services Details</a></li>
                                             </ul>
+                                        </li>
+                                        <li>
+                                            <a href="pricing.html">Pricing</a>
                                         </li>
 
-                                        <li>
-                                            <a href="blog.html">
-                                                Blog
-                                                <i class="fas fa-angle-down"></i>
-                                            </a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-dropdown">
-                                            <a href="#">
-                                                Pages
-                                                <i class="fas fa-angle-down"></i>
-                                            </a>
-                                            <ul class="submenu">
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="service.html">Services</a></li>
-                                                <li><a href="service-details.html">Services Details</a></li>
-                                                <li><a href="portfolio.html">Portfolio</a></li>
-                                                <li><a href="faq.html">Faq's</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                        </li>
                                     </ul>
                                 </nav>
                             </div>
