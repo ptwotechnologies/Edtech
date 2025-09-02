@@ -218,7 +218,7 @@
                         </div>
                     </div>
                     <div class="header-right d-flex justify-content-end align-items-center">
-                        <div class="mean__menu-wrapper">
+                        <div class="mean__menu-wrapper d-none d-lg-block">
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul>
@@ -286,7 +286,7 @@
                         <!-- <a href="#0" class="search-trigger search-icon">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </a> -->
-                        <div class="header-button d-sm-block d-none">
+                        <div class="header-button d-none d-lg-block">
                             <a href="contact.html" class="theme-btn p5-bg">
                                 <span>
                                     Contact Us
@@ -294,7 +294,7 @@
                                 </span>
                             </a>
                         </div>
-                        <div class="header__hamburger d-xl-none my-auto">
+                        <div class="header__hamburger d-lg-none my-auto">
                             <div class="sidebar__toggle">
                                 <i class="fas fa-bars"></i>
                             </div>
@@ -857,6 +857,45 @@
     <script src="assets/js/wow.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
+    
+    <!-- Fix mobile menu CSS -->
+    <style>
+        /* Override CSS that hides the meanmenu reveal button */
+        .mean-container a.meanmenu-reveal {
+            display: block !important;
+            position: relative !important;
+            z-index: 9999 !important;
+        }
+        
+        /* Ensure mobile menu is visible on small screens */
+        @media (max-width: 991px) {
+            .mean-container a.meanmenu-reveal {
+                display: block !important;
+                position: relative !important;
+                z-index: 9999 !important;
+            }
+            
+            /* Show the mobile menu container */
+            .mobile-menu {
+                display: block !important;
+            }
+        }
+        
+        /* Ensure meanmenu navigation is visible */
+        .mean-container .mean-nav {
+            display: block !important;
+            position: relative !important;
+            z-index: 9998 !important;
+        }
+        
+        /* Style the meanmenu reveal button */
+        .meanmenu-reveal {
+            display: block !important;
+            position: relative !important;
+            z-index: 9999 !important;
+            cursor: pointer !important;
+        }
+    </style>
 </body>
 
 </html>

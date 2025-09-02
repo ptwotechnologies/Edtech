@@ -167,7 +167,7 @@
                         </div>
                     </div>
                     <div class="header-right d-flex justify-content-end align-items-center">
-                        <div class="mean__menu-wrapper">
+                        <div class="mean__menu-wrapper d-none d-lg-block">
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul>
@@ -232,7 +232,7 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="header-button d-sm-block d-none">
+                        <div class="header-button d-none d-lg-block">
                             <a href="contact.html" class="theme-btn p5-bg">
                                 <span>
                                     Contact Us
@@ -240,7 +240,7 @@
                                 </span>
                             </a>
                         </div>
-                        <div class="header__hamburger d-xl-none my-auto">
+                        <div class="header__hamburger d-lg-none my-auto">
                             <div class="sidebar__toggle">
                                 <i class="fas fa-bars"></i>
                             </div>
@@ -626,6 +626,156 @@
     <script src="assets/js/wow.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
+    
+    <!-- Custom Mobile Menu CSS and JavaScript -->
+    <style>
+        /* Custom mobile menu styles */
+        .custom-mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+        }
+        
+        .custom-mobile-menu.active {
+            display: block;
+        }
+        
+        .custom-mobile-menu-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 280px;
+            height: 100%;
+            background: #fff;
+            padding: 20px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .custom-mobile-menu.active .custom-mobile-menu-content {
+            transform: translateX(0);
+        }
+        
+        .custom-mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .custom-mobile-menu-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        .custom-mobile-menu-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .custom-mobile-menu-nav ul li {
+            margin-bottom: 15px;
+        }
+        
+        .custom-mobile-menu-nav ul li a {
+            display: block;
+            padding: 12px 0;
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-bottom: 1px solid #f0f0f0;
+            transition: color 0.3s ease;
+        }
+        
+        .custom-mobile-menu-nav ul li a:hover {
+            color: #0C74FF;
+        }
+        
+        .custom-mobile-menu-nav ul li:last-child a {
+            border-bottom: none;
+        }
+        
+        /* Hide meanmenu completely */
+        .mean-container {
+            display: none !important;
+        }
+        
+        /* Ensure hamburger button is visible and clickable */
+        .header__hamburger {
+            display: block !important;
+            cursor: pointer !important;
+        }
+        
+        .sidebar__toggle {
+            cursor: pointer !important;
+            font-size: 24px !important;
+            color: #333 !important;
+        }
+    </style>
+    
+    <script>
+        $(document).ready(function () {
+            // Create custom mobile menu HTML
+            var mobileMenuHTML = `
+                <div class="custom-mobile-menu" id="custom-mobile-menu">
+                    <div class="custom-mobile-menu-content">
+                        <div class="custom-mobile-menu-header">
+                            <h4>Menu</h4>
+                            <button class="custom-mobile-menu-close" id="mobile-menu-close">×</button>
+                        </div>
+                        <nav class="custom-mobile-menu-nav">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="service.html">Services</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            `;
+            
+            // Add mobile menu to body
+            $('body').append(mobileMenuHTML);
+            
+            // Handle hamburger menu click
+            $('.sidebar__toggle').on('click', function(e) {
+                e.preventDefault();
+                $('#custom-mobile-menu').addClass('active');
+            });
+            
+            // Handle close button click
+            $(document).on('click', '#mobile-menu-close', function(e) {
+                e.preventDefault();
+                $('#custom-mobile-menu').removeClass('active');
+            });
+            
+            // Handle overlay click to close
+            $(document).on('click', '.custom-mobile-menu', function(e) {
+                if (e.target === this) {
+                    $(this).removeClass('active');
+                }
+            });
+            
+            // Handle menu item clicks
+            $(document).on('click', '.custom-mobile-menu-nav a', function() {
+                $('#custom-mobile-menu').removeClass('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
