@@ -73,6 +73,71 @@
             flex-direction: column;
         }
 
+        /* Pricing tile heading styles - light blue background with white text */
+        .pricing-items .pricing-head {
+            background: #87CEEB;
+            /* Light blue background */
+            color: white;
+            /* White text */
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        /* Pricing body text styles - white background with dark text */
+        .pricing-items .pricing-body {
+            background: white;
+            /* White background */
+            color: #333;
+            /* Dark text for readability */
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Add gap between blue header and pricing section */
+        .pricing-section {
+            margin-top: 60px;
+        }
+
+        /* Add gap between pricing title and pricing tiles */
+        .pricing-title-area {
+            margin-bottom: 50px;
+        }
+
+        /* Price title styling */
+        .pricing-items .price-title {
+            color: #87CEEB !important;
+            /* Light blue to match heading */
+        }
+
+        .pricing-items .mos {
+            color: #87CEEB !important;
+            /* Light blue to match heading */
+        }
+
+        /* Pricing list items styling */
+        .pricing-items .pricing-listing li {
+            color: #333;
+        }
+
+        /* Theme button styling for better contrast */
+        .pricing-items .theme-btn {
+            background: #87CEEB;
+            color: white;
+            border: 2px solid #87CEEB;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-items .theme-btn:hover {
+            background: transparent;
+            color: #87CEEB;
+        }
+
         .pricing-items:hover {
             transform: translateY(-15px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -408,9 +473,9 @@
     <!-- Breadcrumnd Banner Start -->
 
     <!-- Pricing Section Start -->
-    <section class="pricing-sectionv position-relative fix space-bottom" style="margin-bottom: 80px;">
+    <section class="pricing-section position-relative fix space-bottom" style="margin-bottom: 80px;">
         <div class="container">
-            <div class="row justify-content-center mb-60">
+            <div class="row justify-content-center mb-60 pricing-title-area">
                 <div class="col-lg-6">
                     <div class="section-title text-center">
                         <span class="sub-title wow fadeInUp p5-clr">
@@ -430,7 +495,7 @@
                         </h4>
                         <div class="pricing-body">
                             <h1 class="price-title p4-clr mb-30">
-                                $19
+                                Rs 19
                                 <span class="mos black">
                                     /mo
                                 </span>
@@ -474,7 +539,7 @@
                         </h4>
                         <div class="pricing-body">
                             <h1 class="price-title p4-clr mb-30">
-                                $49
+                                Rs 49
                                 <span class="mos black">
                                     /mo
                                 </span>
@@ -518,7 +583,7 @@
                         </h4>
                         <div class="pricing-body">
                             <h1 class="price-title p4-clr mb-30">
-                                $19
+                                Rs 19
                                 <span class="mos black">
                                     /mo
                                 </span>
@@ -760,7 +825,7 @@
     <script src="assets/js/wow.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
-    
+
     <!-- Fix mobile menu CSS -->
     <style>
         /* Override CSS that hides the meanmenu reveal button */
@@ -769,7 +834,7 @@
             position: relative !important;
             z-index: 9999 !important;
         }
-        
+
         /* Ensure mobile menu is visible on small screens */
         @media (max-width: 991px) {
             .mean-container a.meanmenu-reveal {
@@ -777,20 +842,20 @@
                 position: relative !important;
                 z-index: 9999 !important;
             }
-            
+
             /* Show the mobile menu container */
             .mobile-menu {
                 display: block !important;
             }
         }
-        
+
         /* Ensure meanmenu navigation is visible */
         .mean-container .mean-nav {
             display: block !important;
             position: relative !important;
             z-index: 9998 !important;
         }
-        
+
         /* Style the meanmenu reveal button */
         .meanmenu-reveal {
             display: block !important;
